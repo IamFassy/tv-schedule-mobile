@@ -3,7 +3,7 @@ import { StyleSheet, Text } from 'react-native'
 
 const CustomText = (props) => {
     return (
-        <Text style={[props.type === "normal" ? styles.normal : props.type === "medium" ? styles.medium : styles.bold, { ...props.style }]}>
+        <Text numberOfLines={props.numberOfLines ? props.numberOfLines : null} style={[props.type === "bold" ? styles.bold : props.type === "medium" ? styles.medium : styles.normal, { ...props.style }]}>
             {props.children}
         </Text>
 
