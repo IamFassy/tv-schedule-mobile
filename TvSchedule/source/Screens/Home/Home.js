@@ -27,7 +27,6 @@ class Home extends Component {
         let date = new Date()
         NetworkManager.request(getSchedule + date.toISOString().split('T')[0], httpMethods.get)
             .then((res) => {
-                console.log(res, "res");
                 this.setState({ loading: false })
                 if (res.status === 200) {
                     this.setState({ schedule: res.data })

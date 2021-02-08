@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import CustomHeader from '../../Components/CustomHeader/CustomHeader';
 import CustomText from '../../Components/CustomText/CustomText';
 import Colors from '../../Utils/Colors';

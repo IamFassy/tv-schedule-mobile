@@ -15,13 +15,11 @@ const CustomHeader = (props) => {
 
     return (
         <View style={styles.headerView}>
-
             <View style={{ flex: 0.1 }}>
                 <TouchableOpacity onPress={() => props.navigation.goBack()}>
                     <FontAwesomeIcon style={{ alignSelf: "center" }} icon="arrow-left" color={Colors.white} size={20} />
                 </TouchableOpacity>
             </View>
-
             {props.search && <View style={styles.textInputView}>
                 <TextInput
                     autoFocus={true}
@@ -38,8 +36,6 @@ const CustomHeader = (props) => {
             {!props.search && <View style={{ flex: 0.8 }}>
                 <CustomText type="bold" style={styles.title}>{props.title}</CustomText>
             </View>}
-
-
         </View>
     )
 }

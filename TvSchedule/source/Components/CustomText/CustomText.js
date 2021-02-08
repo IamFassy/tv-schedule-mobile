@@ -6,7 +6,6 @@ const CustomText = (props) => {
         <Text numberOfLines={props.numberOfLines ? props.numberOfLines : null} style={[props.type === "bold" ? styles.bold : props.type === "medium" ? styles.medium : styles.normal, { ...props.style }]}>
             {props.children}
         </Text>
-
     )
 }
 

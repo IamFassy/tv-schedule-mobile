@@ -62,7 +62,6 @@ class Search extends Component {
                         {item.show.runtime !== null && <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.runtime} mins</CustomText>}
                         <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.network?.name.toUpperCase()}</CustomText>
                     </View>
-
                 </View>
             </TouchableOpacity>
         )
@@ -76,15 +75,12 @@ class Search extends Component {
                     search={true}
                     onSubmit={this.onSubmit}
                     {...this.props} />
-
                 {this.state.loading && <View style={styles.centerView}>
                     <Loading />
                 </View>}
-
                 {this.state.loading === false && this.state.results.length === 0 && <View style={styles.centerView}>
                     <CustomText type="bold" style={styles.noResult}>No results found.</CustomText>
                 </View>}
-
                 {this.state.loading === false && this.state.results.length > 0 &&
                     <View style={styles.resultView}>
                         <FlatList
@@ -95,12 +91,9 @@ class Search extends Component {
                             showsVerticalScrollIndicator={false}
                         />
                     </View>}
-
                 {this.state.loading === false && this.state.error && <View style={styles.centerView}>
                     <CustomText type="bold" style={styles.noResult}>There was an error while fetching results.</CustomText>
                 </View>}
-
-
             </SafeAreaView>
         )
     }

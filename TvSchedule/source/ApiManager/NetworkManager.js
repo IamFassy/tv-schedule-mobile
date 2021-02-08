@@ -10,7 +10,7 @@ import { httpMethods, baseUrl } from './Endpoints';
  */
 const baseApi = create({
     baseURL: baseUrl,
-    timeout: 15000,
+    timeout: 20000,
 });
 
 

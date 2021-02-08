@@ -8,15 +8,14 @@ const Show = ({ item = [], toDetail }) => {
         <TouchableOpacity onPress={() => toDetail(item)}>
             <View style={styles.rowView}>
                 <View style={{ flex: 0.3 }}>
-                    <Image source={{ uri: item.show.image.medium }} resizeMode="cover" style={styles.image} />
+                    <Image source={{ uri: item.show.image?.medium }} resizeMode="cover" style={styles.image} />
                 </View>
                 <View style={styles.rightView}>
-                    <CustomText type="medium" numberOfLines={1} style={styles.showName}>{item.show.name}</CustomText>
-                    <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.airtime}</CustomText>
-                    <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.runtime} mins</CustomText>
-                    <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.network.name.toUpperCase()}</CustomText>
+                    {item.show.name !== null && <CustomText type="medium" numberOfLines={1} style={styles.showName}>{item.show.name}</CustomText>}
+                    {item.airtime !== null && <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.airtime}</CustomText>}
+                    {item.runtime !== null && <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.runtime} mins</CustomText>}
+                    <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.network?.name.toUpperCase()}</CustomText>
                 </View>
-
             </View>
         </TouchableOpacity>
     )
