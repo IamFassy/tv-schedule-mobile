@@ -55,10 +55,10 @@ class Search extends Component {
         return (
             <TouchableOpacity onPress={() => this.toDetails(item)}>
                 <View style={styles.singleResult}>
-                    {item.show.image !== null && <Image source={{ uri: item.show.image.medium }} resizeMode="cover" style={styles.image} />}
+                    <Image source={{ uri: item.show.image?.medium }} resizeMode="cover" style={styles.image} />
                     <View style={styles.rightView}>
-                        <CustomText type="medium" numberOfLines={1} style={styles.resultText}>{item.show?.name}</CustomText>
-                        <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show?.schedule.time}</CustomText>
+                        <CustomText type="medium" numberOfLines={1} style={styles.resultText}>{item.show.name}</CustomText>
+                        <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.schedule?.time}</CustomText>
                         {item.show.runtime !== null && <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.runtime} mins</CustomText>}
                         <CustomText type="medium" numberOfLines={1} style={styles.showTime}>{item.show.network?.name.toUpperCase()}</CustomText>
                     </View>
@@ -78,7 +78,7 @@ class Search extends Component {
                 {this.state.loading && <View style={styles.centerView}>
                     <Loading />
                 </View>}
-                {this.state.loading === false && this.state.results.length === 0 && <View style={styles.centerView}>
+                {this.state.loading === false && this.state.results.length === 0 && !this.state.error && <View style={styles.centerView}>
                     <CustomText type="bold" style={styles.noResult}>No results found.</CustomText>
                 </View>}
                 {this.state.loading === false && this.state.results.length > 0 &&

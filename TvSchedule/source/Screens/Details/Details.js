@@ -5,7 +5,6 @@ import CustomText from '../../Components/CustomText/CustomText';
 import Colors from '../../Utils/Colors';
 import { heightPercentageToDP, widthPercentageToDP } from '../../Utils/ResponsiveUI';
 
-
 class Details extends Component {
     constructor() {
         super()

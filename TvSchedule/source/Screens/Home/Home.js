@@ -85,7 +85,7 @@ class Home extends Component {
                         <CustomText style={styles.errorText}>There was an error while fetching the data.</CustomText>
                     </View>
                 }
-                {!this.state.loading && this.state.schedule.length === 0 &&
+                {!this.state.loading && this.state.schedule.length === 0 && !this.state.error &&
                     <View style={styles.centerView}>
                         <CustomText style={styles.errorText}>No data found.</CustomText>
                     </View>
